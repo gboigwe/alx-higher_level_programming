@@ -7,4 +7,4 @@ def divisible_by_2(my_list=[]):
         else:
             mulby2.append(False)
 
-        return(mulby2)
+    return(mulby2)
