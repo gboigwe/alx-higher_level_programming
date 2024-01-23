@@ -10,12 +10,14 @@ def safe_print_list(my_list=[], x=0):
     Returns:
     The printed number of element.
     """
-    ret = 0
-    for i in range(x):
-        try:
-            print("{}".format(my_list[i]), end="")
-            ret += 1
-        except IndexError:
-            break
-        print("")
-        return (ret)
+    list_count = 0
+    try:
+        for i in range(x):
+            print("{:d}".format(my_list[i]), end="")
+            list_count = list_count + 1
+    except:
+        print()
+        return list_count
+    else:
+        print()
+        return list_count
