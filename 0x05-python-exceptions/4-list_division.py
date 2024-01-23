@@ -11,7 +11,7 @@ def list_division(my_list_1, my_list_2, list_length):
     List length of all the divisions is returned.
     """
     list_len = []
-    for i in range(0, list_length):
+    for i in range(list_length):
         try:
             my_list_len = my_list_1[i] / my_list_2[i]
         except TypeError:
