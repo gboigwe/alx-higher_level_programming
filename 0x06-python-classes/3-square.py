@@ -4,17 +4,17 @@
 
 
 class Square:
-    """Class defined for square generation.
+    """Defining class square
 
     Args:
-    size (int): length of one side of square
+    size (int): length of square considered
 
     Attributes:
-    __size (int): length of one side of square
+    __size (int): length of square considered
 
     Raises:
-    TypeError: if size is not an integer
-    ValueError: if size is less than 0
+    TypeError: Error for non integer
+    ValueError: Error for less than 0
 
     """
     def __init__(self, size=0):
@@ -25,13 +25,13 @@ class Square:
         self.__size = size
 
     def area(self):
-    """Calulates area of square.
+    """Defining area of square.
     
     Attributes:
-    __size (int): length of one side of square
+    __size (int): length of square considered
 
     Returns:
-    area (int): length of one side, squared
+    area (int): Result of area returned
 
     """
     area = self.__size * self.__size 
