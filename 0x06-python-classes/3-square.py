@@ -25,14 +25,14 @@ class Square:
         self.__size = size
 
     def area(self):
-    """Defining area of square.
-    
-    Attributes:
-    __size (int): length of square considered
+        """Defining area of square.
 
-    Returns:
-    area (int): Result of area returned
+        Attributes:
+        __size (int): length of square considered
 
-    """
-    area = self.__size * self.__size 
-    return area
+        Returns:
+        area (int): Result of area returned
+
+        """
+        area = self.__size * self.__size
+        return area
