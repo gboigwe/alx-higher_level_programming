@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines arg integer function"""
+"""Defines argument integer function"""
 
 
 def add_integer(a, b=98):
@@ -7,16 +7,15 @@ def add_integer(a, b=98):
     Defines the addition of variable a and b
 
     Args:
-        Variables must be int and float
+    a: Holds first variable
+    b: Holds second variable
 
     Raise:
         TypeError: if either a orb is not an integer or float
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
+    elif not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    elif isinstance(a, float) and isinstance(b, float):
-        a = int(a)
-        b = int(b)
-        return a + b
+    else:
+        return int(a) + int(b)
