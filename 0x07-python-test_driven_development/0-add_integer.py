@@ -5,7 +5,7 @@
 def add_integer(a, b=98):
     """Returns the addition of variable a and b
     Variables must be int and float
-    
+
     Variables must be casted as an int
 
     Returns a calculated integer
