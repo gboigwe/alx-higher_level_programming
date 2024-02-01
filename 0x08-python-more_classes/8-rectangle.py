@@ -76,10 +76,56 @@ class Rectangle:
         """
         greater_rect_1 = rect_1.area() >= rect_2.area()
         greater_rect_2 = rect_2.area() >= rect_1.area()
-
+        
         if greater_rect_1 is True:
+            try:
+                pass
+            except:
+                raise TypeError("rect_1 must be an instance of Rectangle")
             return rect_1
         elif greater_rect_2 is True:
+            try:
+                pass
+            except:
+                raise TypeError("rect_2 must be an instance of Rectangle")
             return rect_2
         else:
             return rect_1
+#        try:
+#            rect_1.area() >= rect_2.area()
+#        except:
+#            raise TypeError("rect_1 must be an instance of Rectangle")
+#        try:
+#            rect_2.area() >= rect_1.area()
+#        except:
+#            raise TypeError("rect_2 must be an instance of Rectangle")
+#        if rect_1.area() == rect_2.area():
+#            return rect_1
+#        greater_rect_1 = rect_1.area() >= rect_2.area()
+#        greater_rect_2 = rect_2.area() >= rect_1.area()
+#        if greater_rect_1 is True:
+#            return rect_1.area()
+#        else:
+#            raise TypeError("rect_1 must be an instance of Rectangle")
+#        if greater_rect_2 is True:
+#            return rect_2.area()
+#        else:
+#            raise TypeError("rect_2 must be an instance of Rectangle")
+#        return rect_1.area()
+
+
+my_rectangle_1 = Rectangle(8, 4)
+my_rectangle_2 = Rectangle(2, 3)
+
+if my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
+    print("my_rectangle_1 is bigger or equal to my_rectangle_2")
+else:
+    print("my_rectangle_2 is bigger than my_rectangle_1")
+
+
+my_rectangle_2.width = 10
+my_rectangle_2.height = 5
+if my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
+    print("my_rectangle_1 is bigger or equal to my_rectangle_2")
+else:
+    print("my_rectangle_2 is bigger than my_rectangle_1")
