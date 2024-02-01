@@ -70,8 +70,13 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """
+        Class Rectangle: A rectangle class
+        __init__: initializes the class with private argument width and height
+        """
         greater_rect_1 = rect_1.area() >= rect_2.area()
         greater_rect_2 = rect_2.area() >= rect_1.area()
+
         if greater_rect_1 is True:
             return rect_1
         elif greater_rect_2 is True:
