@@ -8,7 +8,8 @@ def add_integer(a, b=98):
 
     Variables must be casted as an int
 
-    Returns a calculated integer
+    Raise:
+        TypeError: if either a orb is not an integer or float
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
