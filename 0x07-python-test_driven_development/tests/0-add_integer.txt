@@ -7,7 +7,7 @@ This module defines an integer addition function ``add_integer(a, b=98)``,
 Usage
 =====
 
-  """
+    """
     Adds two numbers, ensuring they are integers or floats.
 
     Parameters:
