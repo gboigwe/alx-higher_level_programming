@@ -3,7 +3,8 @@
 
 
 def add_integer(a, b=98):
-    """Returns the addition of variable a and b
+    """
+    Defines the addition of variable a and b
 
     Args:
         Variables must be int and float
