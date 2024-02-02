@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""
-Defines argument integer function
-it adds 2 integers
-a and b must be first casted
-"""
+"""Defines argument integer function"""
 
 
 def add_integer(a, b=98):
@@ -17,12 +13,8 @@ def add_integer(a, b=98):
     Raise:
         TypeError: if either a orb is not an integer or float
     """
-    if isinstance(a, float):
-        a = int(a)
-    if isinstance(b, float):
-        b = int(b)
-    if not (isinstance(a, int)):
+    if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    if not (isinstance(b, int)):
+    if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    return (a + b)
+    return int(a) + int(b)
