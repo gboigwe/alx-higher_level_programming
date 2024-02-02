@@ -1,40 +1,96 @@
-===========================
+==========================
 How to use 0-add_integer.py
-===========================
+==========================
 
-This module defines an integer addition function ``add_integer(a, b=98)``,
+Import function from module
+----------------------------
 
-Usage
-=====
+>>> add_integer = __import__('0-add_integer').add_integer
 
-    Adds two numbers, ensuring they are integers or floats.
 
-    Parameters:
-    - a (int or float): The first number.
-    - b (int or float, optional): The second number. Defaults to 98.
 
-    Returns:
-    int or float: The sum of a and b.
+Basic cases (intranet):
+-----------------------
+    
+>>> add_integer(2)
+100
 
-    Raises:
-    TypeError: If either a or b is not an integer or float.
+>>> add_integer(1, 2)
+3
 
-    Examples:
-    >>> add_integer(5, 3)
-    8
+>>> add_integer(100, -2)
+98
 
-    >>> add_integer(2.5, 4.5)
-    7.0
+>>> add_integer(100.3, -2)
+98
 
-    >>> add_integer(10)
-    108
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+TypeError: b must be an integer
 
-    >>> add_integer('not_an_int', 7)
-    Traceback (most recent call last):
-        ...
-    TypeError: a must be an integer
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
 
-    >>> add_integer(5, 'not_an_int')
-    Traceback (most recent call last):
-        ...
-    TypeError: b must be an integer
+Edge cases:
+----------------
+
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer("unicorn")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(5, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(34, 54, 67)
+Traceback (most recent call last):
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+The result can't be a float
+>>> add_integer(2.5, 3.7)
+5
+
+The result can't be a float
+>>> add_integer(3.7)
+101
+
+>>> add_integer([1, 2, 3])
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer((1, 2, 3))
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer({"a": 1, "b": 2, "c": 3})
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+exception OverflowError - Raised when the result of an arithmetic operation is too large to 
+be represented.
+
+>>> add_integer(float('-inf'), float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(100e1000, 1)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+
+>>> add_integer(float('nan'), 0)
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
