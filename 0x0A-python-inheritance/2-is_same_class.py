@@ -13,7 +13,7 @@ def is_same_class(obj, a_class):
     Return True if datatype match and false if it doesn't
     """
 
-    if type(a_class) is type(obj):
+    if a_class is type(obj):
         return True
     else:
         return False
