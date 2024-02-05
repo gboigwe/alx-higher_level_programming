@@ -1,5 +1,5 @@
 ==============================
-How to use 3-say_my_name.py
+How to use 1-my_list.txt
 ==============================
 
 1) Test sorting an empty list
