@@ -1,0 +1,45 @@
+============================================
+How to use base_geometry.py
+============================================
+
+This library defines a base class for geometric shapes.
+
+BaseGeometry:
+=============
+
+``Initialization and Validation:``
+
+>>> bg = BaseGeometry()  # Create a BaseGeometry instance
+>>> isinstance(bg, BaseGeometry)
+True
+
+``Area Calculation (Not Implemented):``
+
+>>> bg.area()
+Traceback (most recent call last):
+  ...
+Exception: area() is not implemented
+
+``Integer Validation:``
+
+>>> bg.integer_validator("width", 10)  # Valid integer
+>>> bg.integer_validator("height", 0)
+Traceback (most recent call last):
+  ...
+ValueError: height must be greater than 0
+>>> bg.integer_validator("radius", "5")
+Traceback (most recent call last):
+  ...
+TypeError: radius must be an integer
+
+``Additional Test Cases:``
+
+>>> bg.integer_validator("base", -5)
+Traceback (most recent call last):
+  ...
+ValueError: base must be greater than 0
+
+>>> bg.integer_validator("side", 5.5)
+Traceback (most recent call last):
+  ...
+TypeError: side must be an integer

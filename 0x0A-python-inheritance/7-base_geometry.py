@@ -33,7 +33,7 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """Validates an integer
-        
+
         Args:
             name: name is assumed to be string
             value: checking if type is an integer
