@@ -76,3 +76,33 @@ class Rectangle(BaseGeometry):
         """Defines an area for the rectangle"""
 
         return self.__width * self.__height
+
+    def __str__(self):
+        """Defines a str that return fraction
+        width divided by height
+        """
+
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+
+
+class Square(Rectangle):
+    """Defining a Square class
+    Initializing and inheriting Rectangle class
+
+    Args:
+        size: calculate for size
+    """
+
+    def __init__(self, size):
+        """Initializaion is called on the class
+            size is initialized
+        """
+
+        super().__init__(self, size)
+        self.integer_validator("size", size)
+        self.__size = size
+
+    def area(self):
+        """Defines an area for the square"""
+
+        return self.__size ** 2
