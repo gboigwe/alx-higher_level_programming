@@ -66,7 +66,7 @@ class Rectangle(BaseGeometry):
             height is initialized
         """
 
-        BaseGeometry().__init__(self)
+        BaseGeometry().__init__()
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
