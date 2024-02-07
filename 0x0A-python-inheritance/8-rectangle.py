@@ -50,6 +50,7 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
+
 class Rectangle(BaseGeometry):
     """Defining a Rectangle class
     Initializing and inheriting BaseGeometry class
