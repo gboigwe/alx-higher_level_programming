@@ -74,4 +74,5 @@ class Rectangle(BaseGeometry):
 
     def area(self):
         """Defines an area for the rectangle"""
+
         return self.__width * self.__height
