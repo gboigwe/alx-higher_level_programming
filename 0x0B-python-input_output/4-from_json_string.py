@@ -16,5 +16,4 @@ def from_json_string(my_str):
         objs: The loaded string.
     """
 
-    objs = json.dumps(my_str)
-    return json.loads(objs)
+    return json.loads(my_str)
