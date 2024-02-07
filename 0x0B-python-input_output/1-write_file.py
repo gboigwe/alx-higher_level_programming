@@ -12,5 +12,5 @@ def write_file(filename="", text=""):
         The number of characters inside
     """
 
-    with open(filename, mode="r", encoding="utf-8") as f:
-        f.write(text)
+    with open(filename, mode="r+", encoding="utf-8") as f:
+        return f.write(text)
