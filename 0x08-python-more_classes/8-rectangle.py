@@ -74,20 +74,9 @@ class Rectangle:
         Class Rectangle: A rectangle class
         __init__: initializes the class with private argument width and height
         """
-        greater_rect_1 = rect_1.area() >= rect_2.area()
-        greater_rect_2 = rect_2.area() >= rect_1.area()
-        
-        if greater_rect_1 is True:
-            try:
-                pass
-            except:
-                raise TypeError("rect_1 must be an instance of Rectangle")
-            return rect_1
-        elif greater_rect_2 is True:
-            try:
-                pass
-            except:
-                raise TypeError("rect_2 must be an instance of Rectangle")
-            return rect_2
-        else:
-            return rect_1
+
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        elif type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        return rect_1 if rect_1.area() >= rect_2.area() else rect_2
