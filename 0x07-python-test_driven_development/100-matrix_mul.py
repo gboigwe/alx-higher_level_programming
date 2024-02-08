@@ -1,53 +1,95 @@
 #!/usr/bin/python3
-"""Matrix multiplication function."""
+"""
+
+Module composed by a function that multiplies 2 matrices
+
+"""
+
 
 def matrix_mul(m_a, m_b):
-    """Multiplies two matrices.
+    """ Function that multiplies 2 matrices
 
     Args:
-        m_a (list): The first matrix.
-        m_b (list): The second matrix.
+        m_a: matrix a
+        m_b: matrix b
 
     Returns:
-        list: The result of the multiplication, or None if matrices are invalid.
+        result of the multiplication
 
     Raises:
-        TypeError: If either matrix is not a list of lists.
-        ValueError: If either matrix is empty, has rows of different sizes, or
-             the inner dimensions are incompatible for multiplication.
+        TypeError: if m_a or m_b aren't a list
+        TypeError: if m_a or m_b aren't a list of a lists
+        ValueError: if m_a or m_b are empty
+        TypeError: if the lists of m_a or m_b don't have integers or floats
+        TypeError: if the rows of m_a or m_b don't have the same size
+        ValueError: if m_a and m_b can't be multiplied
+
+
     """
 
-    if not isinstance(m_a, list) or not all(isinstance(row, list) for row in m_a):
-        raise TypeError("m_a must be a list of lists")
+    if not isinstance(m_a, list):
+        raise TypeError("m_a must be a list")
 
-    if not isinstance(m_b, list) or not all(isinstance(row, list) for row in m_b):
-        raise TypeError("m_b must be a list of lists")
+    if not isinstance(m_b, list):
+        raise TypeError("m_b must be a list")
 
-    if not m_a:
-        raise ValueError("m_a cannot be empty")
+    for elems in m_a:
+        if not isinstance(elems, list):
+            raise TypeError("m_a must be a list of lists")
 
-    if not m_b:
-        raise ValueError("m_b cannot be empty")
+    for elems in m_b:
+        if not isinstance(elems, list):
+            raise TypeError("m_b must be a list of lists")
 
-    m_a_cols = len(m_a[0])
-    if any(len(row) != m_a_cols for row in m_a):
-        raise ValueError("Rows of m_a must have the same size")
+    if len(m_a) == 0 or (len(m_a) == 1 and len(m_a[0]) == 0):
+        raise ValueError("m_a can't be empty")
 
-    m_b_rows = len(m_b)
-    if any(len(row) != m_a_cols for row in m_b):
-        raise ValueError("Rows of m_b must have the same size")
+    if len(m_b) == 0 or (len(m_b) == 1 and len(m_b[0]) == 0):
+        raise ValueError("m_b can't be empty")
 
-    if m_a_cols != len(m_b):
-        raise ValueError("Incompatible inner dimensions for multiplication")
+    for lists in m_a:
+        for elems in lists:
+            if not type(elems) in (int, float):
+                raise TypeError("m_a should contain only integers or floats")
 
-    result = []
-    for i in range(len(m_a)):
-        row = []
-        for j in range(len(m_b[0])):
-            num = 0
-            for k in range(m_a_cols):
-                num += m_a[i][k] * m_b[k][j]
-            row.append(num)
-        result.append(row)
+    for lists in m_b:
+        for elems in lists:
+            if not type(elems) in (int, float):
+                raise TypeError("m_b should contain only integers or floats")
 
-    return result
+    length = 0
+
+    for elems in m_a:
+        if length != 0 and length != len(elems):
+            raise TypeError("each row of m_a must be of the same size")
+        length = len(elems)
+
+    length = 0
+
+    for elems in m_b:
+        if length != 0 and length != len(elems):
+            raise TypeError("each row of m_b must be of the same size")
+        length = len(elems)
+
+    if len(m_a[0]) != len(m_b):
+        raise ValueError("m_a and m_b can't be multiplied")
+
+    r1 = []
+    i1 = 0
+
+    for a in m_a:
+        r2 = []
+        i2 = 0
+        num = 0
+        while (i2 < len(m_b[0])):
+            num += a[i1] * m_b[i1][i2]
+            if i1 == len(m_b) - 1:
+                i1 = 0
+                i2 += 1
+                r2.append(num)
+                num = 0
+            else:
+                i1 += 1
+        r1.append(r2)
+
+    return r1
