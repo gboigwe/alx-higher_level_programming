@@ -41,12 +41,24 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        Class Rectangle: A rectangle class
+        __init__: initializes the class with private argument width and height
+        """
+
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        elif type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        return rect_1 if rect_1.area() >= rect_2.area() else rect_2
+
     def __str__(self):
         rect = ""
         if self.__width > 0 and self.__height > 0:
             for i in range(self.__height):
                 rect += "{}".format(self.print_symbol) * self.__width + '\n'
-
         return rect[:-1]
 
     def __repr__(self):
@@ -64,19 +76,3 @@ class Rectangle:
     def __del__(self):
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
-    def __ge__(self, other):
-        self.area() >= other.area()
-
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """
-        Class Rectangle: A rectangle class
-        __init__: initializes the class with private argument width and height
-        """
-
-        if type(rect_1) is not Rectangle:
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        elif type(rect_2) is not Rectangle:
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        return rect_1 if rect_1.area() >= rect_2.area() else rect_2
