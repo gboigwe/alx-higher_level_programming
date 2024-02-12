@@ -99,3 +99,6 @@ class Rectangle(Base):
         self.__y = value
         """Initialize with the id"""
         super().__init__(id)
+    
+    def area(self):
+        return self.__width * self.__height
