@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Rectangle - Creating class that inherits Base class
+"""Rectangle - Created class that inherits Base class
 
 Classes: Inherits from Base class
 
@@ -13,8 +13,7 @@ from .base import Base
 class Rectangle(Base):
     """Rectangle class created
 
-    Inherits id from base class
-    """
+    Inherits id from base class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializing all these arg instances
@@ -48,7 +47,6 @@ class Rectangle(Base):
         """Set the value"""
         self.__width = value
         """Initialize with the id"""
-        super().__init__(id)
 
     @property
     def height(self):
@@ -66,7 +64,6 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = value
         """Initialize with the id"""
-        super().__init__(id)
 
     @property
     def x(self):
@@ -84,7 +81,6 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = value
         """Initialize with the id"""
-        super().__init__(id)
 
     @property
     def y(self):
@@ -102,7 +98,6 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
         """Initialize with the id"""
-        super().__init__(id)
 
     def area(self):
         """Calculating the area of a rectangle"""
