@@ -102,3 +102,7 @@ class Rectangle(Base):
         """Defining a public method that prints in stdout"""
         for i in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """Overiding str method to return a designed output"""
+        return str("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
