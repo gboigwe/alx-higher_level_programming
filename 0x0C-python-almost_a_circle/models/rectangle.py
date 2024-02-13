@@ -107,5 +107,5 @@ class Rectangle(Base):
         """Overiding str method to return a designed output"""
         for i in range(self.__y):
             print("#" * self.__x)
-        return str("[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.__width, self.__height))
+            return str("[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.__x, self.__y, self.__width, self.__height))
