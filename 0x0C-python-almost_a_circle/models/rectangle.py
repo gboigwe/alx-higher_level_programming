@@ -105,5 +105,5 @@ class Rectangle(Base):
 
     def __str__(self):
         """Overiding str method to return a designed output"""
-        for i in range(self.__y):
-            print("#" * self.__x)
+        for i in range(self.__x):
+            print("#" * self.__y)
