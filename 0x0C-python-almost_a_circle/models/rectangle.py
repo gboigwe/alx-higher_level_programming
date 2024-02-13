@@ -100,12 +100,14 @@ class Rectangle(Base):
 
     def display(self):
         """Defining a public method that prints in stdout"""
-        for i in range(self.__height):
-            print("#" * self.__width)
+        for y in range(self.__y):
+            print("")
+        for he in range(self.__height):
+            [print(" ", end="") for x in range(self.__x)]
+            [print("#", end="") for w in range(self.__width)]
+            print("")
 
     def __str__(self):
         """Overiding str method to return a designed output"""
-        for i in range(self.__y):
-            print("#" * self.__x)
-        for j in range(self.__x):
-            print("#" * self.__y)
+        return str("[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.__x, self.__y, self.__width, self.__height))
