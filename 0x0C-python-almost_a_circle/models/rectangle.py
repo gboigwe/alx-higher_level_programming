@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""
-Rectangle - Created class that inherits Base class
-Classes: Inherits from Base class
-Initializes: width (int), height (int), x (int), y (int)
+"""A module that defines a Rectangle creating class `Rectangle`
+
+Classes:
+    -Rectangle:
+    Initializes: width (int), height (int), x (int), y (int)
 """
 
 
@@ -13,8 +14,15 @@ class Rectangle(Base):
     """
     Rectangle class created
     Inherits id from base class
-    """
 
+    Args:
+        @Base: Superclass, inherited from
+
+    Methods:
+        -__init__: initializes an instance of a Recangle
+            *defaults x=0, y=0 and id to None
+        - area: returns the area of the Rectangle
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Initializing all these arg instances
