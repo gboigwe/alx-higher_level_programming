@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """
 Rectangle - Created class that inherits Base class
-
 Classes: Inherits from Base class
-
 Initializes: width (int), height (int), x (int), y (int)
 """
 
@@ -12,16 +10,16 @@ from .base import Base
 
 
 class Rectangle(Base):
-    """Rectangle class created
-
-    Inherits id from base class"""
+    """
+    Rectangle class created
+    Inherits id from base class
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initializing all these arg instances
-
+        """
+        Initializing all these arg instances
         Args:
             width (int), height (int), x (int), y (int)
-
         Inherits id from Base class
         """
 
@@ -40,14 +38,10 @@ class Rectangle(Base):
     def width(self, value):
         """Setting the private instance width"""
         if not isinstance(value, int):
-            """Check for the data type"""
             raise TypeError("width must be an integer")
         elif value <= 0:
-            """Chcke if value is less than or equal to 0"""
             raise ValueError("width must be > 0")
-        """Set the value"""
         self.__width = value
-        """Initialize with the id"""
 
     @property
     def height(self):
@@ -58,13 +52,10 @@ class Rectangle(Base):
     def height(self, value):
         """Setting the private instance height"""
         if not isinstance(value, int):
-            """Check for the data type"""
             raise TypeError("height must be an integer")
         elif value <= 0:
-            """Check if value is less than or equal to 0"""
             raise ValueError("height must be > 0")
         self.__height = value
-        """Initialize with the id"""
 
     @property
     def x(self):
@@ -75,13 +66,10 @@ class Rectangle(Base):
     def x(self, value):
         """Setting the private instance x"""
         if not isinstance(value, int):
-            """Check for the data type"""
             raise TypeError("x must be an integer")
         elif value < 0:
-            """Check if value is less than 0"""
             raise ValueError("x must be >= 0")
         self.__x = value
-        """Initialize with the id"""
 
     @property
     def y(self):
@@ -92,13 +80,10 @@ class Rectangle(Base):
     def y(self, value):
         """Setting the private instance y"""
         if not isinstance(value, int):
-            """Check for the data type"""
             raise TypeError("y must be an integer")
         elif value < 0:
-            """Check if value is less than 0"""
             raise ValueError("y must be >= 0")
         self.__y = value
-        """Initialize with the id"""
 
     def area(self):
         """Calculating the area of a rectangle"""
