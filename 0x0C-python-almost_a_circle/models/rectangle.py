@@ -35,7 +35,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setting the private instance width"""
-        if type(value) != int:
+        if not isinstance(value, int):
             """Check for the data type"""
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -54,7 +54,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Setting the private instance height"""
-        if type(value) != int:
+        if not isinstance(value, int):
             """Check for the data type"""
             raise TypeError("height must be an integer")
         elif value <= 0:
@@ -72,7 +72,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Setting the private instance x"""
-        if type(value) != int:
+        if not isinstance(value, int):
             """Check for the data type"""
             raise TypeError("x must be an integer")
         elif value < 0:
