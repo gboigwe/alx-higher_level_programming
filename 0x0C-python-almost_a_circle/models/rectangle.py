@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Creating a class Rectangle that inherits from Base class
+"""Rectangle- Creating class that inherits Base class
 """
 
 
