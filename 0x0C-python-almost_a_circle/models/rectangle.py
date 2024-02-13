@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 """Rectangle - Creating class that inherits Base class
+
+Classes: Inherits from Base class
+
+Initializes: width (int), height (int), x (int), y (int)
 """
 
 
