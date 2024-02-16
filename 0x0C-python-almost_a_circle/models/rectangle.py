@@ -112,19 +112,12 @@ class Rectangle(Base):
         return str("[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.__x, self.__y, self.__width, self.__height))
 
-    def update(self, *args):
-        """A non argument function that checks if argument is ordered"""
-        if len(args) != 0:
-            rec = 0
-            for arg in args:
-                if rec == 0:
-                    self.id = args[0]
-                elif rec == 1:
-                    self.width = args[1]
-                elif rec == 2:
-                    self.height = args[2]
-                elif rec == 3:
-                    self.x = args[3]
-                elif rec == 4:
-                    self.y = args[4]
-                rec += 1
+    def update(self, *args, **kwargs):
+        """Updating rectangle with args and kwargs"""
+        if args is not None and len(args) > 0:
+            keylist = ["id", "width", "height", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, keylist[i], args[i])
+        elif kwargs is not None:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
