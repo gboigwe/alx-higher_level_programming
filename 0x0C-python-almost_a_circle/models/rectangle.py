@@ -113,11 +113,16 @@ class Rectangle(Base):
                 self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
-        """Updating rectangle with args and kwargs"""
+        """Update function rectangle with args and kwargs"""
         if args is not None and len(args) > 0:
             keylist = ["id", "width", "height", "x", "y"]
-            for i in range(len(args)):
-                setattr(self, keylist[i], args[i])
+            for arg in range(len(args)):
+                setattr(self, keylist[arg], args[arg])
         elif kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns dictionary representation of a rectangle"""
+        return {"x": self.x, "y": self.y, "id": self.id,
+                "height": self.height, "width": self.width}
