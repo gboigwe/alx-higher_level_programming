@@ -5,6 +5,8 @@ Base class has a private class attribute
 
 This class is the base class for other attributesls
 """
+import json
+import csv
 
 
 class Base:
