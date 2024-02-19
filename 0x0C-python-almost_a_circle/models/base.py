@@ -113,3 +113,46 @@ class Base:
             ins_list = []
 
         return ins_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Arranging CSV in serial format
+        Args:
+            list_objs (list): list of python objects
+        """
+        file_name = "{:s}.csv".format(cls.__name__)
+        input = []
+        for obj in range(len(list_objs)):
+            input.append(cls.to_dictionary(list_objs[obj]))  # [{...}, {...}]
+
+        with open(file_name, 'w') as a_file:
+            if cls.__name__ == "Rectangle":
+                fieldnames = ['id', 'width', 'height', 'x', 'y']
+            if cls.__name__ == "Square":
+                fieldnames = ['id', 'size', 'x', 'y']
+            writer = csv.DictWriter(a_file, fieldnames=fieldnames)
+            writer.writeheader()  # add keys
+            writer.writerows(input)  # [{...}, {...}]
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Reverse arrange(deseralising) in CSV
+        Returns:
+            list of instances
+        """
+        file_name = "{:s}.csv".format(cls.__name__)
+        a_list = []
+        try:
+            with open(file_name, 'r') as a_file:
+                reader = csv.DictReader(a_file)  # str of list of dict
+                for row in reader:
+                    for key in row:
+                        row[key] = int(row[key])
+                    a_list.append(row)  # str to list
+            list_instances = []
+            for ls in range(len(a_list)):  # a_list[i]: dictionary of attributes
+                list_instances.append(cls.create(**a_list[ls]))
+        except:
+            list_instances = []
+
+        return list_instances
