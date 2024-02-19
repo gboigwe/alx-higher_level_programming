@@ -93,3 +93,23 @@ class Base:
             dummy_ins = cls(1)
         dummy_ins.update(**dictionary)
         return dummy_ins
+
+    @classmethod
+    def load_from_file(cls):
+        """Returning an instance
+        Returns:
+            The list of instances
+        """
+        file_name = "{:s}.json".format(cls.__name__)
+
+        try:
+            with open(file_name, mode="r", encoding="utf-8") as a_file_name:
+                content_string = a_file_name.read()  # str of list of dict
+            cls_list = cls.from_json_string(content_string)  # str to list
+            ins_list = []
+            for i in range(len(cls_list)):  # cls_list[i]: dict of attributes
+                ins_list.append(cls.create(**cls_list[i]))
+        except:
+            ins_list = []
+
+        return ins_list
