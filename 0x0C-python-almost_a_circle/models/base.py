@@ -109,7 +109,7 @@ class Base:
             ins_list = []
             for i in range(len(cls_list)):  # cls_list[i]: dict of attributes
                 ins_list.append(cls.create(**cls_list[i]))
-        except:
+        except Exception:
             ins_list = []
 
         return ins_list
