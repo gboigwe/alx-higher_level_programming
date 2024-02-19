@@ -98,7 +98,7 @@ class Base:
     def load_from_file(cls):
         """Returning an instance
         Returns:
-            The list of instances
+            The list of instances is been returned
         """
         file_name = "{:s}.json".format(cls.__name__)
 
