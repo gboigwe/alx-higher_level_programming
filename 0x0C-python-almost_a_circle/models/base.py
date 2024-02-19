@@ -150,9 +150,9 @@ class Base:
                         row[key] = int(row[key])
                     a_list.append(row)  # str to list
             list_instances = []
-            for ls in range(len(a_list)):  # a_list[i]: dictionary of attributes
+            for ls in range(len(a_list)):  # a_list[i]: dict of attributes
                 list_instances.append(cls.create(**a_list[ls]))
-        except:
+        except Exception:
             list_instances = []
 
         return list_instances
