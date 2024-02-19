@@ -65,3 +65,16 @@ class Base:
 
         with open(file_name, mode="w", encoding="utf-8") as a_file:
             a_file.write(cls.to_json_string(input))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returning the list from JSON string in python objects
+        Args:
+            json_string (str): representing python objects
+        Returns:
+            list of json string
+        """
+        a_list = []
+        if json_string is not None and json_string != "":
+            a_list = json.loads(json_string)
+        return a_list
