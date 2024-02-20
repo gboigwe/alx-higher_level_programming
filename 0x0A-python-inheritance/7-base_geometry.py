@@ -42,7 +42,7 @@ class BaseGeometry:
         Raises error if value is <= 0
         """
 
-        self.value = value
+        self.__value = value
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
