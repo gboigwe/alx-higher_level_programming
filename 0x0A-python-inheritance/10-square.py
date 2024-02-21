@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Created a class Square, that inherits from rectangle"""
 
 
 Rectangle = __import__("9-rectangle").Rectangle
