@@ -1,0 +1,6 @@
+-- SQL script to create a table on server.
+-- Creates the table force_name on server.
+CREATE TABLE IF NOT EXISTS `force_name` (
+	`id`   INT,
+	`name` VARCHAR(256) NOT NULL
+);
