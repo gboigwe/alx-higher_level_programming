@@ -1,7 +1,4 @@
 #!/usr/bin/node
-c = '"C is fun"';
-python = '"Python is cool"';
-js = '"JavaScript is amazing"';
-console.log(c);
-console.log(python);
-console.log(js);
+console.log('"C is fun"');
+console.log('"Python is cool"');
+console.log('"JavaScript is amazing"');
