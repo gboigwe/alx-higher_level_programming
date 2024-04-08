@@ -3,6 +3,7 @@ const myVar = process.argv[2];
 if (!isNaN(myVar)) {
 	conve = Math.floor(myVar);
 	console.log(`My number: ${conve}`);
-} else {
+}
+else {
 	console.log('Not a number');
 }
