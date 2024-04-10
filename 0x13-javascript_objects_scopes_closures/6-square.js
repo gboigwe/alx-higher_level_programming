@@ -10,16 +10,12 @@ module.exports = class Square extends Rectangle {
     if (c === undefined) {
       this.print();
     } else {
-      let i = 0;
-      while (i < this.height) {
+      for (let i = 0; i < this.height; i++) {
         let row = '';
-        let j = 0;
-        while (j < this.width) {
-          row += c;
-          j++;
+        for (let j = 0; j < this.width; j++) {
+            row += c;
         }
         console.log(row);
-        i++;
       }
     }
   }
