@@ -23,11 +23,13 @@ if __name__ == '__main__':
 
     forth_arg = argv[4]
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE %{}%".format(forth_arg))
+    cursor.execute(
+        "SELECT * FROM states WHERE name LIKE %{}%".format(forth_arg)
+        )
 
     rows = cursor.fetchall()
     for row in rows:
         print(row)
-    
+
     cursor.close()
     conn_db.close()
