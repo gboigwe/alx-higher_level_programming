@@ -22,8 +22,6 @@ if __name__ == '__main__':
     )
 
     cursor = conn_db.cursor()
-
-
     cursor.execute(
         "SELECT * FROM states WHERE name LIKE %{}%".format(forth_arg)
         )
