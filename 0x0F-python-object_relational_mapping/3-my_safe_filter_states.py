@@ -24,7 +24,7 @@ if __name__ == '__main__':
     forth_arg = argv[4]
     query_l = "SELECT * FROM states WHERE name LIKE %s"
 
-    cursor.execute(query_l, ('%s' + forth_arg + '%s'))
+    cursor.execute(query_l, ('%s' + forth_arg + '%s',))
 
     rows = cursor.fetchall()
     for row in rows:
