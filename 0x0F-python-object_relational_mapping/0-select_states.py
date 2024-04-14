@@ -11,15 +11,15 @@ import MySQLdb;
 if __name__ == '__main':
 
     conn_db = MySQLdb.connect(
-        host='localhost',
-        port=3306,
         user=argv[1],
         passwd=argv[2],
-        db=argv[3]
+        db=argv[3],
+        host='localhost',
+        port=3306,
     )
 
     cursor = conn_db.cursor()
-    cursor.execute('SELECT * FROM states')
+    cursor.execute("SELECT * FROM states")
 
     rows = cursor.fetchall()
 
