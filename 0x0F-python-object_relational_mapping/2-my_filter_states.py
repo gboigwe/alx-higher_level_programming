@@ -11,7 +11,7 @@ from sys import argv
 
 if __name__ == '__main__':
 
-    forth_arg = argv[4]
+    # forth_arg = argv[4]
 
     conn_db = MySQLdb.connect(
         host='localhost',
@@ -23,9 +23,11 @@ if __name__ == '__main__':
 
     cursor = conn_db.cursor()
 
-    cursor.execute(
-        "SELECT * FROM states WHERE name LIKE '{}%'".format(forth_arg)
-        )
+    qurryL = """
+        SELECT * FROM states WHERE name LIKE '{}'
+        """.format(argv[4])
+
+    cursor.execute(qurryL)
 
     rows = cursor.fetchall()
 
