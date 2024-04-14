@@ -11,6 +11,8 @@ from sys import argv
 
 if __name__ == '__main__':
 
+    forth_arg = argv[4]
+
     conn_db = MySQLdb.connect(
         host='localhost',
         port=3306,
@@ -21,7 +23,6 @@ if __name__ == '__main__':
 
     cursor = conn_db.cursor()
 
-    forth_arg = argv[4]
 
     cursor.execute(
         "SELECT * FROM states WHERE name LIKE %{}%".format(forth_arg)
