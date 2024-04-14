@@ -11,26 +11,23 @@ from sys import argv
 
 if __name__ == '__main__':
 
-    # forth_arg = argv[4]
-
     conn_db = MySQLdb.connect(
         host='localhost',
         port=3306,
         user=argv[1],
         passwd=argv[2],
-        db=argv[3]
+        db=[3]
     )
 
     cursor = conn_db.cursor()
 
-    qurryL = """
-        SELECT * FROM states WHERE name LIKE '{}'
-        """.format(argv[4])
+    forth_arg = argv[4]
 
-    cursor.execute(qurryL)
+    cursor.execute(
+        "SELECT * FROM states WHERE name LIKE %{}%".format(forth_arg)
+        )
 
     rows = cursor.fetchall()
-
     for row in rows:
         print(row)
 
