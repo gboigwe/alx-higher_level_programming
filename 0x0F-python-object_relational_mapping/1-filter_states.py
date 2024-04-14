@@ -17,7 +17,7 @@ if __name__ == '__main__':
         db=argv[3],
         host='localhost',
         port=3306
-        )
+    )
 
     cursor = conn_db.cursor()
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
