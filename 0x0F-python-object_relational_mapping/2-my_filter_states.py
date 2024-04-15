@@ -6,25 +6,25 @@ of hbtn_0e_0_usa where name matches the argument.
 """
 
 
+import sys
 import MySQLdb
-from sys import argv
 
 if __name__ == '__main__':
 
     conn_db = MySQLdb.connect(
         host='localhost',
         port=3306,
-        user=argv[1],
-        passwd=argv[2],
-        db=argv[3]
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
 
     cursor = conn_db.cursor()
 
-    forth_arg = argv[4]
+    forth_arg = sys.argv[4]
 
     cursor.execute(
-        "SELECT * FROM states WHERE name = '%{}%'".format(forth_arg)
+        "SELECT * FROM states WHERE name LIKE '{}%'".format(forth_arg)
         )
 
     rows = cursor.fetchall()
