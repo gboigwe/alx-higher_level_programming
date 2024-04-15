@@ -20,12 +20,13 @@ if __name__ == '__main__':
 
     cursor = conn_db.cursor()
 
-    query_l = """SELECT c.id, c.name, s.name
-          FROM states s, cities c
-          WHERE c.state_id = s.id
-          ORDER BY c.id ASC"""
+    cursor.execute(
+        "SELECT c.id, c.name, s.name \
+          FROM states s, cities c \
+          WHERE c.state_id = s.id \
+          ORDER BY c.id ASC"
+    )
 
-    cursor.execute(query_l)
 
     rows = cursor.fetchall()
     for row in rows:
