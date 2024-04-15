@@ -31,8 +31,7 @@ if __name__ == '__main__':
     cursor.execute(query_l, (sys.argv[4],))
 
     rows = cursor.fetchall()
-    for row in rows:
-        print(row[0], end=", ")
+    print(", ".join([row[0] for row in rows]))
 
     cursor.close()
     conn_db.close()
