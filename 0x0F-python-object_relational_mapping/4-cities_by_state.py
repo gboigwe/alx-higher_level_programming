@@ -20,27 +20,10 @@ if __name__ == '__main__':
 
     cursor = conn_db.cursor()
 
-    query_l = """SELECT states.name AS state, cities.name AS city
-                FROM states
-                JOIN cities ON states.id = cities.state_id
-                ORDER BY 
-                    CASE
-                        WHEN cities.name = 'San Francisco' THEN 1
-                        WHEN cities.name = 'San Jose' THEN 2
-                        WHEN cities.name = 'Los Angeles' THEN 3
-                        WHEN cities.name = 'Fremont' THEN 4
-                        WHEN cities.name = 'Livermore' THEN 5
-                        WHEN cities.name = 'Page' THEN 6
-                        WHEN cities.name = 'Phoenix' THEN 7
-                        WHEN cities.name = 'Dallas' THEN 8
-                        WHEN cities.name = 'Houston' THEN 9
-                        WHEN cities.name = 'Austin' THEN 10
-                        WHEN cities.name = 'New York' THEN 11
-                        WHEN cities.name = 'Las Vegas' THEN 12
-                        WHEN cities.name = 'Reno' THEN 13
-                        WHEN cities.name = 'Henderson' THEN 14
-                        WHEN cities.name = 'Carson City' THEN 15
-                    END"""
+    query_l = """SELECT state.id, city.id, state.name 
+                    FROM states state, cities city
+                    WHERE city.state_id = state.id
+                    ORDER BY city.id"""
 
     cursor.execute(query_l,)
 
