@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """
-Write a script that lists all cities
-from the database hbtn_0e_4_usa
+Write a script that takes in
+the name of a state as an argument
+and lists all cities of that state,
+using the database hbtn_0e_4_usa
 """
 
 
-import MySQLdb
 import sys
+import MySQLdb
 
 if __name__ == '__main__':
 
@@ -20,16 +22,11 @@ if __name__ == '__main__':
 
     cursor = conn_db.cursor()
 
-    query_l = """SELECT c.id, c.name, s.name
-          FROM states s, cities c
-          WHERE c.state_id = s.id
-          ORDER BY c.id ASC"""
-
-    cursor.execute(query_l)
+    cursor.execute()
 
     rows = cursor.fetchall()
     for row in rows:
         print(row)
-
+    
     cursor.close()
     conn_db.close()
