@@ -9,7 +9,6 @@ import MySQLdb
 import sys
 
 if __name__ == '__main__':
-
     conn_db = MySQLdb.connect(
         host='localhost',
         port=3306,
@@ -26,7 +25,6 @@ if __name__ == '__main__':
           WHERE c.state_id = s.id \
           ORDER BY c.id ASC"
     )
-
 
     rows = cursor.fetchall()
     for row in rows:
