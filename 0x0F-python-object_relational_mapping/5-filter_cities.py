@@ -21,7 +21,6 @@ if __name__ == '__main__':
     )
 
     cursor = conn_db.cursor()
-    forth_arg = sys.argv[4]
 
     query_l = """SELECT cities.name
                 FROM states
@@ -29,7 +28,7 @@ if __name__ == '__main__':
                 WHERE states.name = %s
                 ORDER BY cities.id ASC"""
 
-    cursor.execute(query_l, (forth_arg,))
+    cursor.execute(query_l, (sys.argv[4],))
 
     rows = cursor.fetchall()
     for row in rows:
