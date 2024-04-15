@@ -23,7 +23,8 @@ if __name__ == '__main__':
     cursor = conn_db.cursor()
     forth_arg = sys.argv[4]
 
-    query_l = """SELECT cities.name FROM states
+    query_l = """SELECT cities.name
+                FROM states
                 INNER JOIN cities ON states.id = cities.state_id
                 WHERE states.name = %s
                 ORDER BY cities.id ASC"""
