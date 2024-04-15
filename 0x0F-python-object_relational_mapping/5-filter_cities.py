@@ -23,10 +23,10 @@ if __name__ == '__main__':
     cursor = conn_db.cursor()
     forth_arg = sys.argv[4]
 
-    query_l = "SELECT c.id, c.name, s.name \
-          FROM states s, cities c \
-          WHERE c.state_id = s.id \
-          ORDER BY c.id ASC"
+    query_l = """SELECT cities FROM states
+                INNER JOIN cities ON states.id = cities.state_id
+                WHERE states.name = %s
+                ORDER BY cities.id ASC"""
 
     cursor.execute(query_l, (forth_arg,))
 
