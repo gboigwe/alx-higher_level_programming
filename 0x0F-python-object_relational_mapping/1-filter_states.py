@@ -20,7 +20,7 @@ if __name__ == '__main__':
     )
 
     cursor = conn_db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cursor.execute("SELECT * FROM states WHERE name = 'N%'")
 
     rows = cursor.fetchall()
     for row in rows:
