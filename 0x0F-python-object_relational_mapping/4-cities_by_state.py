@@ -23,7 +23,7 @@ if __name__ == '__main__':
     query_l = """SELECT state.id, city.id, state.name 
                     FROM states state, cities city
                     WHERE city.state_id = state.id
-                    ORDER BY city.id"""
+                    ORDER BY city.id ASC"""
 
     cursor.execute(query_l,)
 
