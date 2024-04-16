@@ -9,9 +9,9 @@ from sys import argv
 from sqlalchemy import Column, String, Integer, create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.declarative import declarative_base
-from model_state import Base, State
 
 Base = declarative_base()
+
 
 class State(Base):
     """Created a TABLE using ORM
