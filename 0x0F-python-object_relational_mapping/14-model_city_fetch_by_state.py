@@ -12,7 +12,6 @@ from model_state import Base, State
 from model_city import City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import asc
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
@@ -22,7 +21,7 @@ if __name__ == "__main__":
     start = sessionmaker()
     start.configure(bind=engine)
     session = start()
-    state_q = session.query(State, City).join(City).order_by(asc(City.id)).all()
+    state_q = session.query(State, City).join(City).order_by(City.id).all()
     for s_name, c_name in state_q:
         print("{:s}: ({:d}) {:s}".format(s_name.name, c_name.id, c_name.name))
     session.close()
