@@ -11,23 +11,17 @@ from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(argv[1],
-                                   argv[2],
-                                   argv[3], pool_pre_ping=True))
-
-    Session = sessionmaker(engine)
-
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        argv[1], argv[2], argv[3]), pool_pre_ping=True)
+    Session = sessionmaker(bind=engine)
     session = Session()
-    arg_forth = argv[4]
-    search = session.query(State).filter(State.name == (arg_forth)).first()
     Base.metadata.create_all(engine)
 
-    if len(search) == 0:
-        print("Not Found")
-    else:
-        print(search[0].id)
+    search = session.query(State).filter(State.name == argv[4]).first()
 
-    session.close
+    if search:
+        print("{}".format(search.id))
+    else:
+        print("Not found")
+    session.close()
