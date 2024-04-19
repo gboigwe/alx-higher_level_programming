@@ -28,6 +28,6 @@ if __name__ == "__main__":
     if len(search) == 0:
         print("Not Found")
     else:
-        print(search.id)
+        print(search[0].id)
 
     session.close
