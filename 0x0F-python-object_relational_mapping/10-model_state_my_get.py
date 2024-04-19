@@ -23,11 +23,11 @@ if __name__ == "__main__":
 
     session = Session()
     arg_forth = argv[4]
-    search = session.query(State).filter(State.name == (arg_forth))
+    search = session.query(State).filter(State.name == (arg_forth)).all()
 
-    try:
-        print(search[0].id)
-    except:
+    if len(search) == 0:
         print("Not Found")
+    else:
+        print(search[0].id)
 
     session.close
