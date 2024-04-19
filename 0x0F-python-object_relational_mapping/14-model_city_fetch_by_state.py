@@ -22,7 +22,7 @@ if __name__ == "__main__":
     start = sessionmaker()
     start.configure(bind=engine)
     session = start()
-    stmt = session.query(State, City).join(City).order_by(asc(City.id)).all()
-    for i, j in stmt:
-        print("{:s}: ({:d}) {:s}".format(i.name, j.id, j.name))
+    state_q = session.query(State, City).join(City).order_by(asc(City.id)).all()
+    for s_name, c_name in state_q:
+        print("{:s}: ({:d}) {:s}".format(s_name.name, c_name.id, c_name.name))
     session.close()
