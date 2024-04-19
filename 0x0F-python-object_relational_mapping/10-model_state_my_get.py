@@ -18,12 +18,12 @@ if __name__ == "__main__":
                                    argv[2],
                                    argv[3], pool_pre_ping=True))
 
-    Base.metadata.create_all(engine)
     Session = sessionmaker(engine)
 
     session = Session()
     arg_forth = argv[4]
-    search = session.query(State).filter(State.name == (arg_forth)).all()
+    search = session.query(State).filter(State.name == (arg_forth)).first()
+    Base.metadata.create_all(engine)
 
     if len(search) == 0:
         print("Not Found")
