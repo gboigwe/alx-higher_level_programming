@@ -13,21 +13,6 @@ def find_peak(list_of_integers):
     """
     if not list_of_integers:
         return None
-    list_peak = list_of_integers[0]
-    for num in list_of_integers:
-        if num > list_peak:
-            list_peak = num
-    return list_peak
-
-
-
-def find_peak(list_of_integers):
-    """
-        A function that finds peak in a list.
-            def find_peak(list_of_integers):
-    """
-    if not list_of_integers:
-        return None
 
     least = 0
     peak = len(list_of_integers) - 1
