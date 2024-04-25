@@ -1,4 +1,3 @@
-echo "$content_length"
 #!/bin/bash
 # This script sends a request to a given URL and displays the size of the response body in bytes
 
