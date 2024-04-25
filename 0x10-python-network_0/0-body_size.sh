@@ -1,8 +1,5 @@
-#!/usr/bin/env bash
-# This script sends a request to a given URL and displays the size of the response body in bytes
-
-url="$1"
-response=$(curl -s "$url")
-size=${#response}
-
-echo "$size"
+#!/bin/bash
+# A script that takes a URL, sends request and get response.
+res_url=$(curl -s "$1")
+content_length=${#res_url}
+echo "$content_length"
