@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""
+    ALX SE Technical interview preparation
+    A function that finds the highest number
+    in the list of unsorted integers
+"""
+
+
 def find_peak(list_of_integers):
     """
         A function that finds peak in a list.
