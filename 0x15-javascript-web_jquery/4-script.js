@@ -1,15 +1,15 @@
 $(document).ready(function () {
-  // Select the div with id 'toggle_header'
+  // Selecting the div with id 'toggle_header'
   $('#toggle_header').click(function () {
-    // Select the header element using jQuery
+    // Query selector header element
     const $header = $('header');
 
-    // Check if the header has the 'red' class
+    // Checking if header has a class 'red'
     if ($header.hasClass('red')) {
-      // Remove the 'red' class and add the 'green' class
+      // Removing class 'red' and adding 'green'
       $header.removeClass('red').addClass('green');
     } else {
-      // Remove the 'green' class and add the 'red' class
+      // Removing class 'green' and adding 'red'
       $header.removeClass('green').addClass('red');
     }
   });

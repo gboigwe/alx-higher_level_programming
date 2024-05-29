@@ -1,7 +1,7 @@
 $(document).ready(function () {
-  // Select the div with id 'add_item'
+  // Selecting div with id 'add_item'
   $('#add_item').click(function () {
-    // Create a new list item element
+    // Creating an element for list item
     const newListItem = $('<li>Item</li>');
 
     // Append the new list item to the list with class 'my_list'
